@@ -8,10 +8,10 @@ from tqdm import tqdm
 import datetime
 
 # Variaveis
-diretorio = "../data/por_classe"
+diretorio = "..\\data\\por_classe\\"
 tipo = "jpg"
 arquivos = util.obtemTodosOsArquivos(diretorio,tipo, True)
-dataset = "./dataset_sem_classes.csv"
+dataset = ".\\dataset_sem_classes.csv"
 
 # Inicia log
 logging.basicConfig(level=logging.DEBUG)

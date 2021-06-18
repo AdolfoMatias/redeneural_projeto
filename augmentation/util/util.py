@@ -8,7 +8,7 @@ from pathlib import Path
 from PIL import Image, ImageOps
 
 def obtemTodosOsArquivos(diretorio_base, tipo_de_arquivo, eRecursivo=False):
-    regra = "/**/*.{}" if eRecursivo else "/*.{}"
+    regra = "\\**\\*.{}" if eRecursivo else "\\*.{}"
     caminho = diretorio_base + regra.format(tipo_de_arquivo)
     arquivos = glob2.glob(caminho , recursive=eRecursivo)
     return arquivos
@@ -47,7 +47,7 @@ def obtemImagem(imagem):
     return Image.open(imagem).convert('RGB')
 
 def obtemAnotacao(arquivo):
-    arquivo = arquivo.replace(".png", ".txt")
+    arquivo = arquivo.replace(".jpg", ".txt")
     linhas = obtemLinhas(arquivo)
     anotacoes = [item for item in linhas]
     

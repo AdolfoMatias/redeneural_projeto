@@ -8,8 +8,8 @@ import datetime
 import os
 
 # Variaveis
-diretorio_base = "../data/por_classe"
-dataset = "./dataset_com_classes.csv"
+diretorio_base = "..\\data\\por_classe"
+dataset = ".\\dataset_com_classes.csv"
 tipo = "jpg"
 
 # Inicia log

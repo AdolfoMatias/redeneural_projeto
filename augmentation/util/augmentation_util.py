@@ -2,10 +2,12 @@
 import cv2
 import numpy as np
 import pandas as pd
+import logging
+import sys
 
 arquivos = pd.read_csv("dataset_sem_classes.csv", delimiter=";")
 
-diretorio = "../data/completo"
+diretorio = "..\data\completo"
 
 def salvar(imagem , path):
     """Salva uma imagem no diretório fornecido
@@ -14,7 +16,7 @@ def salvar(imagem , path):
         imagem ([float]): Imagem para modificação
         path ([type]): diretório onde será salfo a imagem
     """
-    cv2.imwrite(f"{diretorio}/{path}", imagem)
+    cv2.imwrite(f"{diretorio}\\{path}", imagem)
     cv2.waitKey(0)
 
 def redimencionar(imagem, arquivo):
@@ -35,7 +37,7 @@ def redimencionar(imagem, arquivo):
 
     # Redimensionamento com base na largura
     imagem_largura = cv2.resize(imagem, dim, interpolation = cv2.INTER_AREA)
-    path = arquivo[0].split("/")
+    path = arquivo[0].split("\\")
 
     salvar(imagem_largura, f"redi_{path[3]}-{path[4]}")
     return imagem_largura
@@ -53,7 +55,7 @@ def flip_image(imagem, arquivo, tipo_flip = 1):
         [float]: Imagem modificada
     """
     imagem_com_flip = cv2.flip(imagem, tipo_flip)
-    path = arquivo[0].split("/")
+    path = arquivo[0].split("\\")
 
     salvar(imagem_com_flip, f"flip_{tipo_flip}_{path[3]}-{path[4]}")
     return imagem_com_flip
@@ -66,6 +68,8 @@ try:
 
         # redimencionar
         redimencionar(imagem=imagem, arquivo=arquivo)
+        #flip_image(imagem=imagem_redimencionada, arquivo=arquivo, tipo_flip=1)
+
 
         """
         Desafio ->  Adicione o método de flip
