@@ -1,0 +1,11 @@
+---Utilização do do split_data.sh---
+
+Esse script faz uma separação passanbdo a poasta alvo e baseado no calculo que você designa para o bash executar atráves da linha de comando:
+
+
+Como executar:
+
+sh ./split_data.sh -o /home/user/datasetoriginal -s ../datasetsplit -t 80 -v 10 -e 10
+
+
+Assim treino ficou 80%, teste 10% e validação 10%
