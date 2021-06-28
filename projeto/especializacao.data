@@ -1,4 +1,4 @@
 classes=2
-train=projeto/treino.txt
-valid=projeto/val.txt
+train=projeto/train.txt
+valid=projeto/valid.txt
 names=projeto/classes.names

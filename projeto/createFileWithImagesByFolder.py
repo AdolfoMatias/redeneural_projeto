@@ -5,8 +5,8 @@ from pathlib import Path
 
 rootPathTrain = "./dataset/train"
 rootPathVal = "./dataset/valid"
-TRAIN_FILE = "./treino.txt"
-VAl_FILE = "./val.txt"
+TRAIN_FILE = "./train.txt"
+VAl_FILE = "./valid.txt"
 
 
 jpg_files = [f for f in glob2.glob(rootPathTrain + "/**/*.jpg", recursive=True)]
